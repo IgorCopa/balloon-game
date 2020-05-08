@@ -1,0 +1,38 @@
+@mixin displays {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin myPositioning {
+    width: 50%;
+    height: 100%;
+    padding: 0 10px;
+}
+
+@mixin myMedia {
+    @media (min-width: 35em) {
+
+        .header {
+            height: 15vh;
+
+            #h1 {
+                font-size: 1.6rem;
+            }
+
+            section {
+
+                .score {
+
+                    h2#h2 {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    
+        .main {
+            height: 85vh;
+        }
+    }
+}

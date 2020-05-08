@@ -1,0 +1,116 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+body {
+    background-color: $black;
+    font-family: $gameFont;
+
+    header {
+        width: 100%;
+        height: 20vh;
+        @include displays;
+        align-items: center;
+        background-color: $black;
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color: $white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        section {
+            width: 250px;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+
+            .score {
+                @include displays;
+                align-items: space-between;
+                background-color: blue;
+                @include myPositioning;
+
+                h2 {
+                    text-align: center;
+                    color: $black;
+                    font-weight: normal;
+                    font-size: 1rem;
+                    margin-bottom: 2px;
+                }
+
+                h3 {
+                    font-size: 1rem;
+                    color: $black;
+                    font-weight: normal;
+                    margin: .5px 0;
+                    font-size: .8rem;
+
+                    span {
+                        padding: 0 8px;
+                        background-color: white;
+                        border-radius: 2px;
+                        color: $black;
+                        font-size: .8rem;
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            .controls {
+                @include displays;
+                @include myPositioning;
+                align-items: center;
+                background-color: red;
+
+                button {
+                    background-color: rgba(130, 0, 0, .7);
+                    border: 0;
+                    outline: 0;
+                    padding: 2px 5px;
+                    margin: 2px 0px;
+                    width: 4rem;
+                    cursor: pointer;
+                    color: $black;
+                    border-radius: 3px;
+                    font-size: .8rem;
+                    font-weight: normal;
+                }
+
+                button:hover {
+                    background-color: rgba(130, 0, 0, .5);
+                }
+            }
+        }
+    }
+
+    main {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        background-color: $white;
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+        .balloon {
+            position: absolute;
+            width: 1.6em;
+            height: 1.6em;
+            transform: rotate(45deg);
+            border-top-right-radius: .8em;
+            border-top-left-radius: .8em;
+            border-bottom-left-radius: .8em;
+            left: 2em;
+            top: 2em;
+            background-color: $black;
+            cursor: crosshair;
+            transition: all .4s ease-in;
+        }
+    }
+}
+
+@include myMedia;
